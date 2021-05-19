@@ -25,4 +25,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void orderTable1(View view) {
+        Intent intent = new Intent(MainActivity.this, Table1.class);
+        startActivity(intent);
+    }
+    public void orderTable2(View view) {
+        Intent intent = new Intent(MainActivity.this, Table2.class);
+        startActivity(intent);
+    }
+    public void orderTable3(View view) {
+        Intent intent = new Intent(MainActivity.this, Table3.class);
+        startActivity(intent);
+    }
+    public void orderTable4(View view) {
+        Intent intent = new Intent(MainActivity.this, Table4.class);
+        startActivity(intent);
+    }
+    public void orderTable5(View view) {
+        Intent intent = new Intent(MainActivity.this, Table5.class);
+        startActivity(intent);
+    }
+    public void orderTable6(View view) {
+        Intent intent = new Intent(MainActivity.this, Table6.class);
+        startActivity(intent);
+    }
 }
