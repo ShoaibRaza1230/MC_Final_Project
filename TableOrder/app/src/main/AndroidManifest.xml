@@ -9,28 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TableOrder">
-        <activity android:name=".Tables"></activity>
         <activity android:name=".Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Table6" />
-        <activity android:name=".Table5" />
-        <activity android:name=".Table4" />
-        <activity android:name=".Table3" />
-        <activity android:name=".Table2" />
-        <activity android:name=".Table1" />
-        <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".TableData" />
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Tables" />
         <activity android:name=".admin.addProduct" />
     </application>
 

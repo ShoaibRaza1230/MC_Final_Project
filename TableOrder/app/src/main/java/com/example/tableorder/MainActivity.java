@@ -1,6 +1,8 @@
 package com.example.tableorder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,13 +11,28 @@ import android.widget.Button;
 
 import com.example.tableorder.admin.addProduct;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class MainActivity extends AppCompatActivity {
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
     Button add;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ArrayList<TablesClass> exampleList=new ArrayList<>();
+        exampleList.add(new TablesClass(R.drawable.ic_android,"1","5","1"));
+        exampleList.add(new TablesClass(R.drawable.ic_android,"2","8","1"));
+        exampleList.add(new TablesClass(R.drawable.ic_launcher_background,"3","6","2"));
+        mRecyclerView=findViewById(R.id.recclerView);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager=new LinearLayoutManager(this);
+        mAdapter=new TableDataAdapter(exampleList);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
+
         add=findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,28 +43,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void orderTable1(View view) {
-        Intent intent = new Intent(MainActivity.this, Table1.class);
-        startActivity(intent);
-    }
-    public void orderTable2(View view) {
-        Intent intent = new Intent(MainActivity.this, Table2.class);
-        startActivity(intent);
-    }
-    public void orderTable3(View view) {
-        Intent intent = new Intent(MainActivity.this, Table3.class);
-        startActivity(intent);
-    }
-    public void orderTable4(View view) {
-        Intent intent = new Intent(MainActivity.this, Table4.class);
-        startActivity(intent);
-    }
-    public void orderTable5(View view) {
-        Intent intent = new Intent(MainActivity.this, Table5.class);
-        startActivity(intent);
-    }
-    public void orderTable6(View view) {
-        Intent intent = new Intent(MainActivity.this, Table6.class);
-        startActivity(intent);
-    }
+
 }
