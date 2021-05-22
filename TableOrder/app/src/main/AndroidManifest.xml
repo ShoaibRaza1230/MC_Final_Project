@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TableOrder">
+<<<<<<< HEAD
+=======
+        <activity android:name=".admin.addTable"></activity>
+        <activity android:name=".Tables" />
+>>>>>>> 048bf635364b302157f65af1001b48395662c473
         <activity android:name=".Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -6,4 +6,7 @@
     <string name="type">Type: </string>
     <string name="price">Price: </string>
     <string name="discount">Discount: </string>
+    <string name="floorNo">Floor No: </string>
+    <string name="TableNo">Table No: </string>
+    <string name="tableCapacity">Capacity: </string>
 </resources>
