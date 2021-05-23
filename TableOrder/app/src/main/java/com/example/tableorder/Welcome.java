@@ -20,7 +20,7 @@ public class Welcome extends AppCompatActivity {
     }
 
     public void customerSide(View view) {
-        Intent intent = new Intent(Welcome.this, Tables.class);
+        Intent intent = new Intent(Welcome.this, MainActivity.class);
         startActivity(intent);
     }
 }

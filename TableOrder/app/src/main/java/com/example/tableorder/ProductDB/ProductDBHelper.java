@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.tableorder.Products;
+import com.example.tableorder.Tables;
 
 import androidx.annotation.Nullable;
 
@@ -51,6 +52,15 @@ public class ProductDBHelper extends SQLiteOpenHelper {
         cv.put(PRODUCT_STATUS, products.isStatus());
         long insert = db.insert(TABLE_NAME, null, cv);
         if (insert == -1) { return false; }
+        else{return true;}
+    }
+
+    public boolean deleteProduct(Products products){
+        SQLiteDatabase db = getWritableDatabase();
+        String whereClause = "Name=? and Type=?";
+        String whereArgs[] = {products.getName(), products.getType()};
+        long delete =db.delete(TABLE_NAME, whereClause, whereArgs);
+        if (delete <= 0) { return false; }
         else{return true;}
     }
 }

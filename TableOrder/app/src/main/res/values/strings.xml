@@ -5,8 +5,10 @@
     <string name="name">Name: </string>
     <string name="type">Type: </string>
     <string name="price">Price: </string>
-    <string name="discount">Discount: </string>
+    <string name="discount">Discount: (%) </string>
     <string name="floorNo">Floor No: </string>
     <string name="TableNo">Table No: </string>
     <string name="tableCapacity">Capacity: </string>
+    <string name="delete">Delete</string>
+    <string name="size">Size: </string>
 </resources>

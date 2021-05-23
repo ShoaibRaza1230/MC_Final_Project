@@ -3,15 +3,6 @@ package com.example.tableorder;
 public class Products {
     private String name;
     private int price;
-
-    public int getActualPrice() {
-        return actualPrice;
-    }
-
-    public void setActualPrice(int actualPrice) {
-        this.actualPrice = actualPrice;
-    }
-
     private int actualPrice;
     private String Type;
     private int discount;
@@ -65,11 +56,20 @@ public class Products {
         this.status = status;
     }
 
+    public int getActualPrice() {
+        return actualPrice;
+    }
+
+    public void setActualPrice(int actualPrice) {
+        this.actualPrice = actualPrice;
+    }
+
     @Override
     public String toString() {
         return "Products{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
+                ", actualPrice=" + actualPrice +
                 ", Type='" + Type + '\'' +
                 ", discount=" + discount +
                 ", status=" + status +
