@@ -1,6 +1,8 @@
 package com.example.tableorder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,13 +14,28 @@ import com.example.tableorder.admin.addTable;
 import com.example.tableorder.admin.deleteProducts;
 import com.example.tableorder.admin.deleteTables;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class MainActivity extends AppCompatActivity {
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
     Button add,addTable,dTable,dProduct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ArrayList<TablesClass> exampleList=new ArrayList<>();
+        exampleList.add(new TablesClass(R.drawable.ic_android,"1","5","1"));
+        exampleList.add(new TablesClass(R.drawable.ic_android,"2","8","1"));
+        exampleList.add(new TablesClass(R.drawable.ic_launcher_background,"3","6","2"));
+        mRecyclerView=findViewById(R.id.recclerView);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager=new LinearLayoutManager(this);
+        mAdapter=new TableDataAdapter(exampleList);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
+
         add=findViewById(R.id.add);
         addTable=findViewById(R.id.addTable);
         dTable=findViewById(R.id.deleteTablesBTn);
@@ -52,5 +69,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    
+
 }
