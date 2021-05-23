@@ -13,8 +13,6 @@
         android:id="@+id/recclerView"
         android:background="@android:color/darker_gray"
         />
-
-<<<<<<< HEAD
     <Button
         android:id="@+id/add"
         android:layout_width="wrap_content"
@@ -51,7 +49,5 @@
         app:layout_constraintTop_toBottomOf="@+id/add"
         tools:layout_editor_absoluteX="127dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
 </RelativeLayout>
->>>>>>> 1adee7ea71ac07a2deeb96d75b1aa3094cb74c53
+
