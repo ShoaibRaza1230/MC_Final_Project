@@ -13,10 +13,9 @@
         <activity android:name=".admin.deleteTables" />
         <activity android:name=".admin.addTable" />
         <activity android:name=".admin.addProduct" />
-        <activity android:name=".TablesList" />
-        <activity android:name=".Welcome" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

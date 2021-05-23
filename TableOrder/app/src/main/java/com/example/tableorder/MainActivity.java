@@ -24,15 +24,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ArrayList<TablesClass> exampleList=new ArrayList<>();
-        exampleList.add(new TablesClass(R.drawable.table,"1","5","1"));
-        exampleList.add(new TablesClass(R.drawable.table,"2","8","1"));
-        exampleList.add(new TablesClass(R.drawable.ic_launcher_background,"3","6","2"));
+        setContentView(R.layout.customer_table_view);
+        ArrayList<Customer_TablesClass> exampleList=new ArrayList<>();
+        exampleList.add(new Customer_TablesClass(R.drawable.table,"1","5","1"));
+        exampleList.add(new Customer_TablesClass(R.drawable.table,"2","8","1"));
+        exampleList.add(new Customer_TablesClass(R.drawable.ic_launcher_background,"3","6","2"));
         mRecyclerView=findViewById(R.id.recclerView);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager=new LinearLayoutManager(this);
-        mAdapter=new TableDataAdapter(exampleList);
+        mAdapter=new Customer_TableDataAdapter(exampleList);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
