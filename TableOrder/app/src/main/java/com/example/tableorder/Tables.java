@@ -4,11 +4,21 @@ public class Tables {
     private int floorNo;
     private int tableNo;
     private int capacity;
+    private int image;
+
+
+
+    private int status;
+
+
+
     public Tables(int floorNo, int tableNo, int capacity)
     {
         this.floorNo=floorNo;
         this.tableNo=tableNo;
         this.capacity=capacity;
+        this.status=0;
+        this.image=R.drawable.table;
     }
 
     @Override
@@ -18,6 +28,20 @@ public class Tables {
                 ", tableNo=" + tableNo +
                 ", capacity=" + capacity +
                 '}';
+    }
+    public int isStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 
     public int getFloorNo() {

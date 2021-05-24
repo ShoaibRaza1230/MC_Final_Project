@@ -4,44 +4,55 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.Toast;
 
-import com.example.tableorder.admin.addProduct;
-import com.example.tableorder.admin.addTable;
-import com.example.tableorder.admin.deleteProducts;
-import com.example.tableorder.admin.deleteTables;
+import com.example.tableorder.Adapter.Customer_TableDataAdapter;
+import com.example.tableorder.ProductDB.TableDBHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-
+     TableDBHelper tableDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_table_view);
-        ArrayList<Customer_TablesClass> exampleList=new ArrayList<>();
-        exampleList.add(new Customer_TablesClass(R.drawable.table,"1","5","1"));
-        exampleList.add(new Customer_TablesClass(R.drawable.table,"2","8","1"));
-        exampleList.add(new Customer_TablesClass(R.drawable.table,"1","5","1"));
-        exampleList.add(new Customer_TablesClass(R.drawable.table,"2","8","1"));
-        exampleList.add(new Customer_TablesClass(R.drawable.table,"1","5","1"));
-        exampleList.add(new Customer_TablesClass(R.drawable.table,"2","8","1"));
-        exampleList.add(new Customer_TablesClass(R.drawable.table,"1","5","1"));
-        exampleList.add(new Customer_TablesClass(R.drawable.table,"2","8","1"));
-        exampleList.add(new Customer_TablesClass(R.drawable.ic_launcher_background,"3","6","2"));
+      //  ArrayList<Tables> exampleList=new ArrayList<>();
+       // exampleList.add(new Tables(1,5,4));
+//        exampleList.add(new Tables(1,2,7));
+//        exampleList.add(new Tables(2,4,5));
+//        exampleList.add(new Tables(1,7,6));
+//        exampleList.add(new Tables(1,8,3));
+//        exampleList.add(new Tables(2,2,4));
+//        exampleList.add(new Tables(3,1,8));
+//        exampleList.add(new Tables(1,5,4));
         mRecyclerView=findViewById(R.id.recclerView);
         
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager=new LinearLayoutManager(this);
-        mAdapter=new Customer_TableDataAdapter(exampleList);
+
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
+
+
+        tableDB = new TableDBHelper(this);
+        List<Tables> allTable = tableDB.getAllTable();
+        if (allTable.size() > 0) {
+            mRecyclerView.setVisibility(View.VISIBLE);
+           // ContactAdapter mAdapter = new ContactAdapter(this, allContacts);
+            mAdapter=new Customer_TableDataAdapter(allTable,getApplicationContext());
+            mRecyclerView.setAdapter(mAdapter);
+        }
+        else {
+            mRecyclerView.setVisibility(View.GONE);
+            Toast.makeText(this, "There is no Table in the database. Start adding now", Toast.LENGTH_LONG).show();
+        }
+
 
     }
 
