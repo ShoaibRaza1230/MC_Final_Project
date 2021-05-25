@@ -5,112 +5,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MainActivity">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="50dp">
-        <TextView
-            android:layout_width="98dp"
-            android:layout_height="match_parent"
-            android:text="TablePicture"
-            />
-        <TextView
-            android:layout_width="76dp"
-            android:layout_height="match_parent"
-            android:text="Table No"
-            android:layout_marginLeft="115dp"
-            />
-        <TextView
-            android:layout_width="76dp"
-            android:layout_height="match_parent"
-            android:text="Capacity"
-            android:layout_marginLeft="215dp"
-            />
 
         <TextView
-            android:layout_width="76dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Floor No"
-            android:layout_marginLeft="315dp"
-            />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="List of Tables"
+            android:textSize="20sp" />
+
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recclerView"
+        android:background="@color/cornsilk"
         android:layout_marginTop="50dp"
         android:layout_width="396dp"
         android:layout_height="690dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@android:color/darker_gray"
         android:padding="4dp"
         android:scrollbars="vertical" />
 
-    <Button
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginEnd="-6dp"
-        android:layout_marginRight="-6dp"
-        android:layout_toEndOf="@+id/deleteProductBtn"
-        android:layout_toRightOf="@+id/deleteProductBtn"
-        android:text="Admin add Product"
-        app:layout_constraintBottom_toTopOf="@+id/deleteProductBtn"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="127dp" />
 
-    <Button
-        android:id="@+id/addTable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="665dp"
-        android:text="Admin Add Table"
-        app:layout_constraintBottom_toTopOf="@+id/deleteTablesBTn"
-        app:layout_constraintTop_toBottomOf="@+id/deleteProductBtn"
-        tools:layout_editor_absoluteX="122dp" />
-
-    <Button
-        android:id="@+id/deleteTablesBTn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/add"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="53dp"
-        android:layout_marginLeft="53dp"
-        android:layout_marginTop="622dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="6dp"
-        android:layout_toEndOf="@+id/addTable"
-        android:layout_toRightOf="@+id/addTable"
-        android:text="Delete Table"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addTable"
-        tools:layout_editor_absoluteX="142dp" />
-
-    <Button
-        android:id="@+id/deleteProductBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
-        android:layout_marginBottom="80dp"
-        android:text="Delete Product"
-        app:layout_constraintBottom_toTopOf="@+id/addTable"
-        app:layout_constraintTop_toBottomOf="@+id/add"
-        tools:layout_editor_absoluteX="127dp" />
 </RelativeLayout>

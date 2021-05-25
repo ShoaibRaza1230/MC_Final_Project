@@ -44,6 +44,13 @@ public class addTable extends AppCompatActivity {
         }
         TableDBHelper tabdbHelper = new TableDBHelper(addTable.this);
         boolean b = tabdbHelper.addTable(tablesObj);
+        if(b==true)
+        {
+            Toast.makeText(addTable.this, "Successfully Added", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(addTable.this, "Failed to Add", Toast.LENGTH_LONG).show();
+        }
     }
 
 

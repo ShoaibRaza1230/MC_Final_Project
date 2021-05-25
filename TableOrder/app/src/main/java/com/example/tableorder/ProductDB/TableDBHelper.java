@@ -2,6 +2,7 @@ package com.example.tableorder.ProductDB;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -9,6 +10,9 @@ import android.widget.Toast;
 import com.example.tableorder.Products;
 import com.example.tableorder.Tables;
 import com.example.tableorder.admin.addTable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.Nullable;
 
@@ -21,14 +25,14 @@ public class TableDBHelper extends SQLiteOpenHelper {
     public static final String FLOOR_NO= "floorNo";
     public static final String TABLE_NO = "tableNo";
     public static final String TABLE_CAPACITY="tableCapacity";
+    public static final String TABLE_STATUS = "tableStatus";
 
     public TableDBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable= "CREATE TABLE " + TABLE_NAME+ "("+ TABLE_ID + " Integer PRIMARY KEY AUTOINCREMENT, "+
-                FLOOR_NO + " Interger, "+ TABLE_NO + " Interger, "+ TABLE_CAPACITY + " Integer)";
+        String createTable= "CREATE TABLE " + TABLE_NAME+ "("+ FLOOR_NO + " Interger, "+ TABLE_NO + " Interger, "+ TABLE_CAPACITY + " Integer, "+ TABLE_STATUS +" Integer, "+" PRIMARY KEY(" + FLOOR_NO + ", " + TABLE_NO +"))";
         db.execSQL(createTable);
 
     }
@@ -42,12 +46,19 @@ public class TableDBHelper extends SQLiteOpenHelper {
     public boolean addTable(Tables tables){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put(FLOOR_NO, tables.getFloorNo());
-        cv.put(TABLE_NO, tables.getTableNo());
-        cv.put(TABLE_CAPACITY, tables.getCapacity());
-        long insert = db.insert(TABLE_NAME, null, cv);
-        if (insert == -1) { return false; }
-        else{return true;}
+        try {
+            cv.put(FLOOR_NO, tables.getFloorNo());
+            cv.put(TABLE_NO, tables.getTableNo());
+            cv.put(TABLE_CAPACITY, tables.getCapacity());
+            cv.put(TABLE_STATUS, tables.isStatus());
+            long insert = db.insert(TABLE_NAME, null, cv);
+            if (insert <=0) { return false; }
+            else{return true;}
+        }catch (Exception ex)
+        {
+            return false;
+        }
+
     }
 
     public boolean deleteTable(Tables tables){
@@ -67,5 +78,25 @@ public class TableDBHelper extends SQLiteOpenHelper {
         long insert = db.insert(TABLE_NAME, null, cv);
         if (insert == -1) { return false; }
         else{return true;}
+    }
+    public List<Tables> getAllTable()
+    {
+        List<Tables> myList=new ArrayList<>();
+        String query = "SELECT * FROM "+ TABLE_NAME +" WHERE "+ TABLE_STATUS +" == 0";
+        SQLiteDatabase DB= this.getReadableDatabase();
+        Cursor cursor=DB.rawQuery(query, null);
+        if(cursor.moveToFirst())
+        {
+            do {
+                int flor=cursor.getInt(0);
+                int tableN=cursor.getInt(1);
+                int cap=cursor.getInt(2);
+                Tables newTables=new Tables(flor,tableN,cap);
+                myList.add(newTables);
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        DB.close();
+        return myList;
     }
 }

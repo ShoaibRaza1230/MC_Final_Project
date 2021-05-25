@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TableOrder">
-        <activity android:name=".customer_order"/>
-        <activity android:name=".FoodCatagory"/>
+        <activity android:name=".admin.AdminPanel"></activity>
         <activity android:name=".admin.deleteProducts" />
         <activity android:name=".admin.deleteTables" />
         <activity android:name=".admin.addTable" />
@@ -24,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FoodCategories" />
     </application>
 
 </manifest>
