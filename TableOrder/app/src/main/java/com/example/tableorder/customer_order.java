@@ -36,4 +36,11 @@ public class customer_order extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
     }
+
+    public void FoodCatagories(View view) {
+        Intent intent=new Intent(customer_order.this, FoodCatagory.class);
+        startActivity(intent);
+    }
+
+
 }
