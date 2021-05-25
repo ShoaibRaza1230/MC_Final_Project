@@ -9,9 +9,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.tableorder.Adapter.Customer_TableDataAdapter;
-import com.example.tableorder.ProductDB.TableDBHelper;
+import com.example.tableorder.AdminDB.TableDBHelper;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {

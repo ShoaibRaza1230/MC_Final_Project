@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tableorder.MainActivity;
-import com.example.tableorder.ProductDB.ProductDBHelper;
+import com.example.tableorder.AdminDB.ProductDBHelper;
 import com.example.tableorder.Products;
 import com.example.tableorder.R;
 

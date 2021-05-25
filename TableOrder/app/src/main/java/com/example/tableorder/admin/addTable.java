@@ -10,9 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tableorder.MainActivity;
-import com.example.tableorder.ProductDB.ProductDBHelper;
-import com.example.tableorder.ProductDB.TableDBHelper;
-import com.example.tableorder.Products;
+import com.example.tableorder.AdminDB.TableDBHelper;
 import com.example.tableorder.R;
 import com.example.tableorder.Tables;
 

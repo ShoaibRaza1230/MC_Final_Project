@@ -11,11 +11,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.tableorder.ProductDB.ProductDBHelper;
-import com.example.tableorder.ProductDB.TableDBHelper;
+import com.example.tableorder.AdminDB.ProductDBHelper;
 import com.example.tableorder.Products;
 import com.example.tableorder.R;
-import com.example.tableorder.Tables;
 
 public class deleteProducts extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -27,7 +25,9 @@ public class deleteProducts extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_products);
+        setContentView(R.layout.customer_table_view);
+
+
         name= findViewById(R.id.dProductName);
 
         deleteBtn=findViewById(R.id.deleteBtn);
