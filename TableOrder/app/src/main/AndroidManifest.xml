@@ -24,9 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".customer_order"/>
+        <activity android:name=".Customer.customer_order"/>
         <activity android:name=".FoodCatagory"/>
-        <activity android:name=".FoodCategories" />
     </application>
 
 </manifest>

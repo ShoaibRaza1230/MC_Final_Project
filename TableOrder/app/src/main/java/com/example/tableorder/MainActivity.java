@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-
         tableDB = new TableDBHelper(this);
         List<Tables> allTable = tableDB.getAllTable();
         if (allTable.size() > 0) {

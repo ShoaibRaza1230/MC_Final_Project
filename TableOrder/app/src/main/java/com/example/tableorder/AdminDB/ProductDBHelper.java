@@ -2,10 +2,15 @@ package com.example.tableorder.AdminDB;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.tableorder.Products;
+import com.example.tableorder.Tables;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.Nullable;
 
@@ -62,5 +67,29 @@ public class ProductDBHelper extends SQLiteOpenHelper {
         long delete =db.delete(TABLE_NAME, whereClause, whereArgs);
         if (delete <= 0) { return false; }
         else{return true;}
+    }
+    public List<Products> getAllProduct(String ty)
+    {
+        String types=ty;
+        List<Products> myList=new ArrayList<>();
+//        String query = "SELECT * FROM "+ TABLE_NAME +" WHERE "+ PRODUCT_TYPE +"=" + types;
+        String query = "SELECT * FROM "+ TABLE_NAME;
+        SQLiteDatabase DB= this.getReadableDatabase();
+        Cursor cursor=DB.rawQuery(query, null);
+        if(cursor.moveToFirst())
+        {
+            do {
+                String name=cursor.getString(1);
+                int price=cursor.getInt(2);
+                int aprice=cursor.getInt(3);
+                int discount=cursor.getInt(4);
+                String typ=cursor.getString(5);
+                Products newProduct=new Products(name,price,aprice,typ,discount,false);
+                myList.add(newProduct);
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        DB.close();
+        return myList;
     }
 }

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.tableorder.admin.addTable;
+import com.example.tableorder.Customer.customer_order;
 
 public class Welcome extends AppCompatActivity {
 
