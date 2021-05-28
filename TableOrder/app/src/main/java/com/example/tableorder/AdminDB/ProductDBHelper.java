@@ -72,10 +72,9 @@ public class ProductDBHelper extends SQLiteOpenHelper {
     {
         String types=ty;
         List<Products> myList=new ArrayList<>();
-//        String query = "SELECT * FROM "+ TABLE_NAME +" WHERE "+ PRODUCT_TYPE +"=" + types;
-        String query = "SELECT * FROM "+ TABLE_NAME;
         SQLiteDatabase DB= this.getReadableDatabase();
-        Cursor cursor=DB.rawQuery(query, null);
+        Cursor cursor= DB.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + PRODUCT_TYPE + "=?",
+                new String[] { (types) });
         if(cursor.moveToFirst())
         {
             do {

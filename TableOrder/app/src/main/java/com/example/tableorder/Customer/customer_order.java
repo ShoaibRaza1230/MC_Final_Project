@@ -32,16 +32,16 @@ public class customer_order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_order);
         Intent intent=getIntent();
-        String fodCatagory= intent.getStringExtra("foodCatagory");
+        String food= intent.getStringExtra("foodCatagory");
         custRecycleView=findViewById(R.id.recclerView);
-
+        Toast.makeText(this,food,Toast.LENGTH_LONG).show();
         custRecycleView.setHasFixedSize(true);
         custLayoutManager=new LinearLayoutManager(this);
 
         custRecycleView.setLayoutManager(custLayoutManager);
 
         productDB = new ProductDBHelper(this);
-        List<Products> allProducts = productDB.getAllProduct(fodCatagory);
+        List<Products> allProducts = productDB.getAllProduct(food);
         if (allProducts.size() > 0) {
             custRecycleView.setVisibility(View.VISIBLE);
             // ContactAdapter mAdapter = new ContactAdapter(this, allContacts);
