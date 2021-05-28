@@ -14,41 +14,14 @@
         >
 
         <ImageView
-            android:id="@+id/Table"
-            android:layout_width="130dp"
+            android:id="@+id/FoodImage"
+            android:layout_width="match_parent"
             android:layout_height="109dp"
             android:layout_marginTop="16dp"
             android:padding="2dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/TableNo"
-            android:layout_width="60dp"
-            android:layout_height="112dp"
-            android:layout_marginStart="11dp"
-            android:layout_marginLeft="11dp"
-            android:layout_marginTop="16dp"
-            android:layout_toEndOf="@+id/Table"
-            android:layout_toRightOf="@+id/Table"
-            android:text="Table No"
-            android:textAlignment="gravity"
-            android:textSize="24sp"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/Capacity"
-            android:layout_width="60dp"
-            android:layout_height="112dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"
-            android:layout_toEndOf="@+id/TableNo"
-            android:layout_toRightOf="@+id/TableNo"
-            android:text="Capacity"
-            android:textSize="24sp"
-            app:layout_constraintTop_toTopOf="parent" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
