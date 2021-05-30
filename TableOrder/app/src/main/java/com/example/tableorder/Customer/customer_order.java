@@ -14,6 +14,7 @@ import com.example.tableorder.Adapter.Customer_OrderAdapter;
 import com.example.tableorder.Adapter.Customer_TableDataAdapter;
 import com.example.tableorder.AdminDB.ProductDBHelper;
 import com.example.tableorder.AdminDB.TableDBHelper;
+import com.example.tableorder.Bill;
 import com.example.tableorder.FoodCatagory;
 import com.example.tableorder.Products;
 import com.example.tableorder.R;
@@ -60,4 +61,9 @@ public class customer_order extends AppCompatActivity {
     }
 
 
+    public void checkout(View view) {
+        //todo:have to impliment this
+        Intent intent=new Intent(customer_order.this, Bill.class);
+        startActivity(intent);
+    }
 }

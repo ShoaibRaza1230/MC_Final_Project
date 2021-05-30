@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Customer.customer_order">
+    tools:context=".Bill">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recclerView"
@@ -21,10 +21,12 @@
 
     <TextView
         android:id="@+id/textView7"
+        style="@android:style/Widget.Material.Light.TextView.SpinnerItem"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Customer Orders"
-        android:textSize="36sp" />
+        android:text="Customer Bill "
+        android:textSize="36sp"
+        android:textAlignment="center"/>
 
     <Button
         android:id="@+id/btncancel"
@@ -36,7 +38,7 @@
         android:layout_marginStart="59dp"
         android:layout_marginLeft="59dp"
         android:layout_marginBottom="19dp"
-        android:onClick="FoodCatagories"
+        android:onClick="cancel"
         android:text="Back" />
 
     <Button
@@ -49,6 +51,6 @@
         android:layout_marginEnd="76dp"
         android:layout_marginRight="76dp"
         android:layout_marginBottom="17dp"
-        android:onClick="checkout"
-        android:text="CheckOut" />
+        android:onClick="print"
+        android:text="Print" />
 </RelativeLayout>

@@ -43,8 +43,7 @@ public class FoodCatagory extends AppCompatActivity {
         });
 
     }
-
-    public void customerOrder(View view) {
+    public void cancel(View view) {
         Intent intent=new Intent(FoodCatagory.this, MainActivity.class);
         startActivity(intent);
     }

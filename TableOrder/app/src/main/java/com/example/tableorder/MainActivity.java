@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.tableorder.Adapter.Customer_TableDataAdapter;
 import com.example.tableorder.AdminDB.TableDBHelper;
+import com.example.tableorder.Customer.customer_order;
 
 import java.util.List;
 
@@ -54,4 +56,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void cancel(View view) {
+        Intent intent=new Intent(MainActivity.this, Welcome.class);
+        startActivity(intent);
+    }
+
+    public void takeAway(View view) {
+        //todo:adding takeaway options
+    }
 }
