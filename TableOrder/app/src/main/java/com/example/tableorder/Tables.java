@@ -5,20 +5,17 @@ public class Tables {
     private int tableNo;
     private int capacity;
     private int image;
-
-
-
+    private String tableCode;
     private int status;
 
-
-
-    public Tables(int floorNo, int tableNo, int capacity)
+    public Tables(int floorNo, int tableNo, int capacity,String tableCode)
     {
         this.floorNo=floorNo;
         this.tableNo=tableNo;
         this.capacity=capacity;
         this.status=0;
         this.image=R.drawable.table;
+        this.tableCode = tableCode;
     }
 
     @Override
@@ -66,6 +63,13 @@ public class Tables {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+    public String getTableCode() {
+        return tableCode;
+    }
+
+    public void setTableCode(String tableCode) {
+        this.tableCode = tableCode;
     }
 
 

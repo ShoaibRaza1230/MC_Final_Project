@@ -22,6 +22,7 @@ public class TableDBHelper extends SQLiteOpenHelper {
     public static final String FLOOR_NO= "floorNo";
     public static final String TABLE_NO = "tableNo";
     public static final String TABLE_CAPACITY="tableCapacity";
+    public static final String TABLE_CODE="tableCode";
     public static final String TABLE_STATUS = "tableStatus";
 
     public TableDBHelper(@Nullable Context context) {
@@ -29,7 +30,7 @@ public class TableDBHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable= "CREATE TABLE " + TABLE_NAME+ "("+ FLOOR_NO + " Interger, "+ TABLE_NO + " Interger, "+ TABLE_CAPACITY + " Integer, "+ TABLE_STATUS +" Integer, "+" PRIMARY KEY(" + FLOOR_NO + ", " + TABLE_NO +"))";
+        String createTable= "CREATE TABLE " + TABLE_NAME+ "("+ FLOOR_NO + " Interger, "+ TABLE_NO + " Interger, "+ TABLE_CAPACITY + " Integer, "+ TABLE_STATUS +" Integer, "+TABLE_CODE +" Text, "+" PRIMARY KEY(" + FLOOR_NO + ", " + TABLE_NO +"," + TABLE_CODE +"))";
         db.execSQL(createTable);
 
     }
@@ -48,6 +49,7 @@ public class TableDBHelper extends SQLiteOpenHelper {
             cv.put(TABLE_NO, tables.getTableNo());
             cv.put(TABLE_CAPACITY, tables.getCapacity());
             cv.put(TABLE_STATUS, tables.isStatus());
+            cv.put(TABLE_CODE,tables.getTableCode());
             long insert = db.insert(TABLE_NAME, null, cv);
             if (insert <=0) { return false; }
             else{return true;}
@@ -88,7 +90,8 @@ public class TableDBHelper extends SQLiteOpenHelper {
                 int flor=cursor.getInt(0);
                 int tableN=cursor.getInt(1);
                 int cap=cursor.getInt(2);
-                Tables newTables=new Tables(flor,tableN,cap);
+                String cod=cursor.getString(4);
+                Tables newTables=new Tables(flor,tableN,cap,cod);
                 myList.add(newTables);
             }while (cursor.moveToNext());
         }

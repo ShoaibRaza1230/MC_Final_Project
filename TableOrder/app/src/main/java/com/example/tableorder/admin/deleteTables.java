@@ -32,7 +32,7 @@ public class deleteTables extends AppCompatActivity {
 
     public void deleteTable(View view) {
         try {
-            tablesObj = new Tables(Integer.parseInt(dFloorNo.getText().toString()), Integer.parseInt(dTableNo.getText().toString()) ,0);
+            tablesObj = new Tables(Integer.parseInt(dFloorNo.getText().toString()), Integer.parseInt(dTableNo.getText().toString()) ,0,"");
             Toast.makeText(deleteTables.this, tablesObj.toString(), Toast.LENGTH_SHORT).show();
         }
         catch (Exception e){

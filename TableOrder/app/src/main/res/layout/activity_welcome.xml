@@ -12,26 +12,26 @@
         style="@android:style/Widget.Holo.Light.Button.Inset"
         android:layout_width="271dp"
         android:layout_height="86dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginBottom="16dp"
         android:onClick="adminSide"
         android:text="Admin"
+        app:layout_constraintBottom_toTopOf="@+id/customerbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.385"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeNote"
         app:rippleColor="@color/design_default_color_secondary" />
 
     <Button
         android:id="@+id/customerbtn"
         android:layout_width="271dp"
         android:layout_height="86dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
         android:onClick="customerSide"
         android:text="Customer"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.385"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/welcomeNote"

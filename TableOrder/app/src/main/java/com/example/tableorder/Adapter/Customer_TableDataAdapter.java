@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.tableorder.FoodCatagory;
 import com.example.tableorder.R;
+import com.example.tableorder.TableVerification;
 import com.example.tableorder.Tables;
 
 import androidx.annotation.NonNull;
@@ -45,11 +46,12 @@ public class Customer_TableDataAdapter extends RecyclerView.Adapter<Customer_Tab
         holder.imageeView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context, FoodCatagory.class);
+                Intent intent=new Intent(context, TableVerification.class);
                 intent.putExtra("imageNames",currentTable.getImage());
                 intent.putExtra("floors",currentTable.getFloorNo());
                 intent.putExtra("tables",currentTable.getTableNo());
                 intent.putExtra("capacities",currentTable.getCapacity());
+                intent.putExtra("code",currentTable.getTableCode());
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
