@@ -35,7 +35,7 @@
     <Button
         android:id="@+id/cancel_button"
         android:layout_width="114dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
@@ -48,7 +48,7 @@
     <Button
         android:id="@+id/takewaya"
         android:layout_width="114dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
