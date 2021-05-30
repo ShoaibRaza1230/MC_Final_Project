@@ -8,17 +8,19 @@
     tools:context=".MainActivity">
     <Button
         android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:text="Admin add Product"
         app:layout_constraintBottom_toTopOf="@+id/deleteProductBtn"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/round_button"
         tools:layout_editor_absoluteX="127dp" />
 
     <Button
         android:id="@+id/addTable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/round_button"
         android:text="Admin Add Table"
         app:layout_constraintBottom_toTopOf="@+id/deleteTablesBTn"
         app:layout_constraintTop_toBottomOf="@+id/deleteProductBtn"
@@ -26,8 +28,9 @@
 
     <Button
         android:id="@+id/deleteTablesBTn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/round_button"
         android:text="Delete Table"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addTable"
@@ -35,8 +38,9 @@
 
     <Button
         android:id="@+id/deleteProductBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@drawable/round_button"
+        android:layout_height="70dp"
         android:text="Delete Product"
         app:layout_constraintBottom_toTopOf="@+id/addTable"
         app:layout_constraintTop_toBottomOf="@+id/add"
