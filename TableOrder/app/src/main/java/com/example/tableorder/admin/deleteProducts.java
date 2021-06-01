@@ -44,7 +44,7 @@ public class deleteProducts extends AppCompatActivity implements AdapterView.OnI
 
         try {
 
-            productsDeleteObj = new Products(name.getText().toString(), 0,0, type , 0, false);
+            productsDeleteObj = new Products(name.getText().toString(), 0,0, type , 0, false,"");
             Toast.makeText(deleteProducts.this, productsDeleteObj.toString(), Toast.LENGTH_SHORT).show();
         }
         catch (Exception e){

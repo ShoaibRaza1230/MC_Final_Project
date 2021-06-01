@@ -11,6 +11,6 @@ public class AdminOderList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_active_oder_list);
+        setContentView(R.layout.activity_admin_oder_list);
     }
 }

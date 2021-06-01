@@ -18,12 +18,12 @@ public class TableDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "tableDB";
     private static final String TABLE_NAME="tables";
 
-    public static final String TABLE_ID = "ID";
-    public static final String FLOOR_NO= "floorNo";
-    public static final String TABLE_NO = "tableNo";
-    public static final String TABLE_CAPACITY="tableCapacity";
-    public static final String TABLE_CODE="tableCode";
-    public static final String TABLE_STATUS = "tableStatus";
+    private static final String TABLE_ID = "ID";
+    private static final String FLOOR_NO= "floorNo";
+    private static final String TABLE_NO = "tableNo";
+    private static final String TABLE_CAPACITY="tableCapacity";
+    private static final String TABLE_CODE="tableCode";
+    private static final String TABLE_STATUS = "tableStatus";
 
     public TableDBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

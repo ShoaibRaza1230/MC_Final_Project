@@ -24,15 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_table_view);
-      //  ArrayList<Tables> exampleList=new ArrayList<>();
-       // exampleList.add(new Tables(1,5,4));
-//        exampleList.add(new Tables(1,2,7));
-//        exampleList.add(new Tables(2,4,5));
-//        exampleList.add(new Tables(1,7,6));
-//        exampleList.add(new Tables(1,8,3));
-//        exampleList.add(new Tables(2,2,4));
-//        exampleList.add(new Tables(3,1,8));
-//        exampleList.add(new Tables(1,5,4));
         mRecyclerView=findViewById(R.id.recclerView);
         
         mRecyclerView.setHasFixedSize(true);

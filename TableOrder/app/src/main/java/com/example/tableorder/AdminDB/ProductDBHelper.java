@@ -19,14 +19,15 @@ public class ProductDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "prodcutDB";
     private static final String TABLE_NAME="product";
 
-    public static final String PRODUCT_ID = "ID";
-    public static final String PRODUCT_NAME = "Name";
-    public static final String PRODUCT_PRICE = "Price";
+    private static final String PRODUCT_ID = "ID";
+    private static final String PRODUCT_NAME = "Name";
+    private static final String PRODUCT_PRICE = "Price";
 
-    public static final String PRODUCT_ACTUAL_PRICE="ActualPrice";
-    public static final String PRODUCT_DISCOUNT = "Discount";
-    public static final String PRODUCT_TYPE = "Type";
-    public static final String PRODUCT_STATUS = "Status";
+    private static final String PRODUCT_ACTUAL_PRICE="ActualPrice";
+    private static final String PRODUCT_DISCOUNT = "Discount";
+    private static final String PRODUCT_TYPE = "Type";
+    private static final String PRODUCT_SIZE = "Size";
+    private static final String PRODUCT_STATUS = "Status";
 
     public ProductDBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -36,7 +37,7 @@ public class ProductDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createProductTable= "CREATE TABLE " + TABLE_NAME+ "("+ PRODUCT_ID + " Integer PRIMARY KEY AUTOINCREMENT, "+
                 PRODUCT_NAME + " Text, "+ PRODUCT_PRICE + " Interger, "+ PRODUCT_ACTUAL_PRICE + " Interger, "+ PRODUCT_DISCOUNT + " Integer, "+ PRODUCT_TYPE +" Text, "
-                + PRODUCT_STATUS +" BOOL)";
+                + PRODUCT_STATUS +" BOOL, "+ PRODUCT_SIZE +" Text)";
         db.execSQL(createProductTable);
     }
 
@@ -55,6 +56,7 @@ public class ProductDBHelper extends SQLiteOpenHelper {
         cv.put(PRODUCT_DISCOUNT, products.getDiscount());
         cv.put(PRODUCT_TYPE, products.getType());
         cv.put(PRODUCT_STATUS, products.isStatus());
+        cv.put(PRODUCT_SIZE, products.getSize());
         long insert = db.insert(TABLE_NAME, null, cv);
         if (insert == -1) { return false; }
         else{return true;}
@@ -83,7 +85,8 @@ public class ProductDBHelper extends SQLiteOpenHelper {
                 int aprice=cursor.getInt(3);
                 int discount=cursor.getInt(4);
                 String typ=cursor.getString(5);
-                Products newProduct=new Products(name,price,aprice,typ,discount,false);
+                String siz=cursor.getString(7);
+                Products newProduct=new Products(name,price,aprice,typ,discount,false,siz);
                 myList.add(newProduct);
             }while (cursor.moveToNext());
         }

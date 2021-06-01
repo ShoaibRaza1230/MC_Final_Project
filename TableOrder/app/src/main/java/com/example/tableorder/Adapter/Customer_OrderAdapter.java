@@ -39,9 +39,10 @@ public class Customer_OrderAdapter extends RecyclerView.Adapter<Customer_OrderAd
             Products currentProduct=productsList.get(position);
 
           //  holder.imageeView.setImageResource(currentTable.getImage());
-            holder.name.setText(String.valueOf(currentProduct.getName()));
+            holder.name.setText(currentProduct.getName());
             holder.price.setText(String.valueOf(currentProduct.getPrice()));
             holder.discount.setText(String.valueOf(currentProduct.getDiscount()));
+            holder.size.setText(currentProduct.getSize());
 
         }
 
@@ -55,12 +56,14 @@ public class Customer_OrderAdapter extends RecyclerView.Adapter<Customer_OrderAd
             public TextView name;
             public TextView price;
             public TextView discount;
+            public TextView size;
 
             public ExampleViewHolder(@NonNull View itemView) {
                 super(itemView);
                 name=itemView.findViewById(R.id.productName);
                 price=itemView.findViewById(R.id.price);
                 discount=itemView.findViewById(R.id.discount);
+                size=itemView.findViewById(R.id.productSizee);
               //  floorView=itemView.findViewById(R.id.FloorNo);
             }
         }

@@ -24,8 +24,8 @@ public class FoodCatagory extends AppCompatActivity {
         setContentView(R.layout.activity_food_catagory);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, foods);
         Intent intent = getIntent();
-        int id = intent.getIntExtra("tables",0);
-        int idd = intent.getIntExtra("floors",0);
+        int tble = intent.getIntExtra("tables",0);
+        int flor = intent.getIntExtra("floors",0);
         int iddd = intent.getIntExtra("capacities",0);
         int idddd = intent.getIntExtra("imageNames",0);
 
@@ -37,6 +37,9 @@ public class FoodCatagory extends AppCompatActivity {
                 String foodCatagry = ( (TextView) view ).getText().toString();
                 Intent intent1=new Intent(FoodCatagory.this, customer_order.class);
                 intent1.putExtra("foodCatagory",foodCatagry);
+                intent1.putExtra("tables",tble);
+                intent1.putExtra("floors",flor);
+                //intent1.putExtra("foodCatagory",foodCatagry);
                 startActivity(intent1);
                 Toast.makeText( getBaseContext(), "Item " + foodCatagry, Toast.LENGTH_LONG ).show();
             }

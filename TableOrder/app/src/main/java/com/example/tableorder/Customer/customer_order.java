@@ -34,6 +34,8 @@ public class customer_order extends AppCompatActivity {
         setContentView(R.layout.activity_customer_order);
         Intent intent=getIntent();
         String food= intent.getStringExtra("foodCatagory");
+        int tble=intent.getIntExtra("tables",0);
+        int flor= intent.getIntExtra("floors",0);
         custRecycleView=findViewById(R.id.recclerView);
         Toast.makeText(this,food,Toast.LENGTH_LONG).show();
         custRecycleView.setHasFixedSize(true);

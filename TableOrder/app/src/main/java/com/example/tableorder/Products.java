@@ -5,9 +5,10 @@ public class Products {
     private int price;
     private int actualPrice;
     private String Type;
+    private String size;
     private int discount;
     private boolean status;
-    public Products(String name, int price,int actualPrice, String Type, int discount, boolean status)
+    public Products(String name, int price,int actualPrice, String Type, int discount, boolean status, String size)
     {
         this.name=name;
         this.price=price;
@@ -15,6 +16,7 @@ public class Products {
         this.actualPrice=actualPrice;
         this.discount=discount;
         this.status=status;
+        this.size=size;
     }
     public String getName() {
         return name;
@@ -62,6 +64,13 @@ public class Products {
 
     public void setActualPrice(int actualPrice) {
         this.actualPrice = actualPrice;
+    }
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 
     @Override

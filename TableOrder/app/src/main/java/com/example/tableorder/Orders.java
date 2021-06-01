@@ -6,14 +6,23 @@ public class Orders {
     private String Type;
     private int table;
     private int floor;
-    private boolean status;
-    public Orders(String name, int price, String type, int table, int floor, boolean status) {
+    private String size;
+    private int status;
+    public Orders(String name, int price, String type, int table, int floor, int status,String size) {
         this.name = name;
         this.price = price;
         Type = type;
         this.table = table;
         this.floor = floor;
         this.status = status;
+        this.size=size;
+    }
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 
     public String getName() {
@@ -56,11 +65,11 @@ public class Orders {
         this.floor = floor;
     }
 
-    public boolean isStatus() {
+    public int isStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 }

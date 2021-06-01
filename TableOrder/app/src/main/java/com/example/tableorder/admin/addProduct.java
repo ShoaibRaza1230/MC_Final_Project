@@ -51,9 +51,14 @@ public class addProduct extends AppCompatActivity  implements AdapterView.OnItem
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(getApplicationContext(),foods[position] , Toast.LENGTH_LONG).show();
         type=foods[position];
-        if(type=="Fast Food") {
+        if(type=="Fast Food" || type=="Drink") {
             size.setVisibility(View.VISIBLE);
             sizeView.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            size.setVisibility(View.INVISIBLE);
+            sizeView.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -78,7 +83,7 @@ public class addProduct extends AppCompatActivity  implements AdapterView.OnItem
                 discountedPrice= discountedPrice-((discountedPrice/(double)100)*dis);
             }
 
-            productsObj = new Products(name.getText().toString(), (int)discountedPrice,Integer.parseInt(price.getText().toString()) , type , (int)dis, false);
+            productsObj = new Products(name.getText().toString(), (int)discountedPrice,Integer.parseInt(price.getText().toString()) , type , (int)dis, false,size.getText().toString());
             Toast.makeText(addProduct.this, productsObj.toString(), Toast.LENGTH_SHORT).show();
         }
         catch (Exception e){

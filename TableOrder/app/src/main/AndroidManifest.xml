@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TableOrder">
-        <activity android:name=".TableVerification"></activity>
+        <activity android:name=".Kitchen.OrderTable"></activity>
+        <activity android:name=".TableVerification" />
         <activity android:name=".Bill" />
         <activity android:name=".admin.AdminOderList" />
         <activity android:name=".admin.AdminPanel" />
