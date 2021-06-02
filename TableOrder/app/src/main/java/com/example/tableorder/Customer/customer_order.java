@@ -48,7 +48,7 @@ public class customer_order extends AppCompatActivity {
         if (allProducts.size() > 0) {
             custRecycleView.setVisibility(View.VISIBLE);
             // ContactAdapter mAdapter = new ContactAdapter(this, allContacts);
-            custAdapter=new Customer_OrderAdapter(allProducts,getApplicationContext());
+            custAdapter=new Customer_OrderAdapter(allProducts,getApplicationContext(),tble,flor,food);
             custRecycleView.setAdapter(custAdapter);
         }
         else {

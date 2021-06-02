@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.tableorder.Kitchen.ManageOrder;
 import com.example.tableorder.Kitchen.OrderTable;
 import com.example.tableorder.MainActivity;
 import com.example.tableorder.R;
@@ -26,7 +27,7 @@ public class AdminPanel extends AppCompatActivity {
         orderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AdminPanel.this, OrderTable.class);
+                Intent intent=new Intent(AdminPanel.this, ManageOrder.class);
                 startActivity(intent);
             }
         });

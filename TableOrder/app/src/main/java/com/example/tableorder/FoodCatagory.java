@@ -26,8 +26,8 @@ public class FoodCatagory extends AppCompatActivity {
         Intent intent = getIntent();
         int tble = intent.getIntExtra("tables",0);
         int flor = intent.getIntExtra("floors",0);
-        int iddd = intent.getIntExtra("capacities",0);
-        int idddd = intent.getIntExtra("imageNames",0);
+       // int iddd = intent.getIntExtra("capacities",0);
+       // int idddd = intent.getIntExtra("imageNames",0);
 
         ListView listView = (ListView) findViewById(R.id.foodCatagoryLV);
         listView.setAdapter(adapter);

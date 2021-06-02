@@ -1,6 +1,8 @@
 package com.example.tableorder.Adapter;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +19,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Customer_OrderAdapter extends RecyclerView.Adapter<Customer_OrderAdapter.ExampleViewHolder> {
         private List<Products> productsList;
         Context context;
-        public Customer_OrderAdapter(List<Products> exampleList, Context context){
+        int table, floor;
+        String category;
+   // Customer_OrderAdapter(allProducts,getApplicationContext(),tble,flor,food);
+        public Customer_OrderAdapter(List<Products> exampleList, Context contex,int tble,int flor,String foodCategoryo){
             productsList=exampleList;
             this.context=context;
+            this.floor=flor;
+            this.table=tble;
+            this.category=foodCategoryo;
         }
         @NonNull
         @Override
@@ -43,6 +52,23 @@ public class Customer_OrderAdapter extends RecyclerView.Adapter<Customer_OrderAd
             holder.price.setText(String.valueOf(currentProduct.getPrice()));
             holder.discount.setText(String.valueOf(currentProduct.getDiscount()));
             holder.size.setText(currentProduct.getSize());
+            List<Orders> myList = new ArrayList<>();
+           // holder.size.setOnClickListener();
+
+            {
+              //  (String name, int price, String type, int table, int floor, int status,String size)
+            //    Orders newProduct = new Orders(floor, table, Category, typ, holder.price.getText(), false, siz);
+
+
+                     //   myList.add(newProduct);
+            }
+
+          //  return myList;
+
+
+
+
+
 
         }
 
