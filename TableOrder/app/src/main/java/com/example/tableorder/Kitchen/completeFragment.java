@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.tableorder.R;
 
@@ -57,10 +58,14 @@ public class completeFragment extends Fragment {
         }
     }
 
+    View view;
+    ListView completeLV;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_complete, container, false);
+        view= inflater.inflate(R.layout.fragment_complete, container, false);
+       completeLV= (ListView) view.findViewById(R.id.completeLV);
+       return view;
     }
 }

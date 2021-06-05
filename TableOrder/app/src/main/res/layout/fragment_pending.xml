@@ -5,13 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".Kitchen.pendingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/pendingLV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textColor="@color/colorAccent"
-        android:text="Pending Order" />
-
+        android:layout_height="match_parent" />
 </FrameLayout>
