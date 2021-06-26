@@ -1,5 +1,6 @@
 package com.example.tableorder.AdminDB;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -72,5 +73,50 @@ public class OrderDBHelper extends SQLiteOpenHelper {
         cursor.close();
         DB.close();
         return myList;
+    }
+    public List<Orders> getAllCompletedOrder()
+    {
+        List<Orders> myList=new ArrayList<>();
+        String query = "SELECT * FROM "+ TABLE_NAME +" WHERE "+ ORDER_STATUS +" == 1";
+        SQLiteDatabase DB= this.getReadableDatabase();
+        Cursor cursor=DB.rawQuery(query, null);
+        if(cursor.moveToFirst())
+        {
+            do {
+                int id=cursor.getInt(0);
+                String orderName=cursor.getString(1);
+                int pric=cursor.getInt(2);
+                int tble=cursor.getInt(3);
+                int flor=cursor.getInt(4);
+                String ProdType=cursor.getString(5);
+                String ProdSize=cursor.getString(6);
+                int stats=cursor.getInt(7);
+                boolean bool = true;
+                // (String name, int price, String type, int table, int floor, boolean status,String size)
+                Orders newOrder=new Orders(orderName,pric,ProdType,tble,flor,stats,ProdSize);
+                myList.add(newOrder);
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        DB.close();
+        return myList;
+    }
+
+    public boolean oderCompleted(String name,int table,int floor)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        try {
+            cv.put(ORDER_STATUS, 1);
+            String whereClause = "floorNo=? and tableNo=? and Name=?";
+            String whereArgs[] = {String.valueOf(floor), String.valueOf(table),name};
+            long insert = db.update(TABLE_NAME, cv, whereClause,whereArgs);
+            if (insert <=0) { return false; }
+            else{return true;}
+        }catch (Exception ex)
+        {
+            return false;
+        }
+
     }
 }

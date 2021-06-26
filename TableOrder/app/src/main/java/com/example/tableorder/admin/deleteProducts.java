@@ -2,6 +2,7 @@ package com.example.tableorder.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -62,6 +63,8 @@ public class deleteProducts extends AppCompatActivity implements AdapterView.OnI
     }
 
     public void cancelDeleteProduct(View view) {
+        Intent intent=new Intent(deleteProducts.this, AdminPanel.class);
+        startActivity(intent);
     }
 
     @Override

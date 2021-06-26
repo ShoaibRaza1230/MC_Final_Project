@@ -51,7 +51,7 @@ public class deleteTables extends AppCompatActivity {
 
 
     public void CancelTable(View view) {
-        Intent intent=new Intent(deleteTables.this, MainActivity.class);
+        Intent intent=new Intent(deleteTables.this, AdminPanel.class);
         startActivity(intent);
     }
 }

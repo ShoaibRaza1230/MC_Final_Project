@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TableOrder">
         <activity android:name=".Kitchen.ManageOrder"></activity>
-        <activity android:name=".Kitchen.OrderTable" />
+        <activity android:name=".Kitchen.OrderCompleteConfirmation" />
         <activity android:name=".TableVerification" />
         <activity android:name=".Bill" />
         <activity android:name=".admin.AdminOderList" />

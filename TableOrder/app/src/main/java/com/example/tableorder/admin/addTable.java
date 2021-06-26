@@ -61,7 +61,7 @@ public class addTable extends AppCompatActivity {
 
 
     public void CancelTable(View view) {
-        Intent intent=new Intent(addTable.this, MainActivity.class);
+        Intent intent=new Intent(addTable.this, AdminPanel.class);
         startActivity(intent);
     }
 }

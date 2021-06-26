@@ -94,7 +94,7 @@ public class addProduct extends AppCompatActivity  implements AdapterView.OnItem
     }
 
     public void cancelProduct(View view) {
-        Intent intent=new Intent(addProduct.this, MainActivity.class);
+        Intent intent=new Intent(addProduct.this, AdminPanel.class);
         startActivity(intent);
     }
 }

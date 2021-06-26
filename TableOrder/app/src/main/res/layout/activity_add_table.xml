@@ -164,7 +164,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Table Code:"
+        android:text="T. Code:"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/tableCode"
         app:layout_constraintEnd_toStartOf="@+id/tableCode"

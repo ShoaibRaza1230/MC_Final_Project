@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.tableorder.Kitchen.ManageOrder;
-import com.example.tableorder.Kitchen.OrderTable;
-import com.example.tableorder.MainActivity;
 import com.example.tableorder.R;
 
 public class AdminPanel extends AppCompatActivity {
