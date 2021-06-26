@@ -11,5 +11,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="cornsilk">#FFF8DC</color>
+    <color name="mycolor">#45C6C0</color>
 
 </resources>
