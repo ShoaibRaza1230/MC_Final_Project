@@ -13,7 +13,7 @@
         android:layout_marginTop="32dp"
         android:onClick="SaveTable"
         android:text="@string/save"
-        android:textSize="20sp"
+        android:textSize="21sp"
         app:layout_constraintBottom_toBottomOf="@+id/tableCancelBtn"
         app:layout_constraintEnd_toStartOf="@+id/tableCancelBtn"
         app:layout_constraintHorizontal_bias="0.5"
